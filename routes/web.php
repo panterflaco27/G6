@@ -34,4 +34,3 @@ Route::get('/login', function(){
 });
 
 
-URL::forceScheme('https');
