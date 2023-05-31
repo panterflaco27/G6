@@ -32,3 +32,6 @@ Route::get('/reg', function(){
 Route::get('/login', function(){
     return view('/sisweb/login');
 });
+
+
+URL::forceScheme('https');
