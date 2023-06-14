@@ -70,88 +70,94 @@
 
                         
                          <!--modal inicio de sesion-->
-                         <div class="modal fade" id="modal-inicio" aria-labelledby="modalTitle">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header modal-registro">
-                                        <h2 class="modal-title fs-5 mx-auto">¿Ya estás registrado? <br> incia sesión ahora mismo!</h2>
-                                        <!--button type="button" class="btn-close" data-bs-dismiss="modal " aria-label="Close"></button-->
+                        <form action="" method="">
+                             <div class="modal fade" id="modal-inicio" aria-labelledby="modalTitle">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-registro">
+                                            <h2 class="modal-title fs-5 mx-auto">¿Ya estás registrado? <br> incia sesión ahora mismo!</h2>
+                                            <!--button type="button" class="btn-close" data-bs-dismiss="modal " aria-label="Close"></button-->
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/log">
+                                                <div>
+                                                    <label for="correo" class="col-form-label">Correo:</label>
+                                                    <input type="email" class="form-control" id="correo" placeholder="example@example.com">
+                                                    <label for="password" class="col-form-label">Contraseña:</label>
+                                                    <input type="password" class="form-control" id="password">
+                                                </div>
+                                                <div class="flex-col">
+                                                    <input type="checkbox" class="" id="pass">
+                                                    <label for="pass" class="form-label">Recordar contraseña</label>
+                                                    <a href="#" class="">¿Olvidó su contraseña?</a>
+                                                </div>
+                                                <button class="btn btn-primary btn-diag" type="submit">Iniciar sesión</button>
+                                                <hr>
+                                                <label for="log" class="form-label">¿Aún no tienes una cuenta?, <a href="#" data-bs-target="#modal-registro" data-bs-toggle="modal">Regístrate!</a></label>
+                                            </form>
+                                        </div>
+                                        
                                     </div>
-                                    <div class="modal-body">
-                                        <form action="/log">
-                                            <div>
-                                                <label for="correo" class="col-form-label">Correo:</label>
-                                                <input type="email" class="form-control" id="correo" placeholder="example@example.com">
-                                                <label for="password" class="col-form-label">Contraseña:</label>
-                                                <input type="password" class="form-control" id="password">
-                                            </div>
-                                            <div class="flex-col">
-                                                <input type="checkbox" class="" id="pass">
-                                                <label for="pass" class="form-label">Recordar contraseña</label>
-                                                <a href="#" class="">¿Olvidó su contraseña?</a>
-                                            </div>
-                                            <button class="btn btn-primary btn-diag" type="submit">Iniciar sesión</button>
-                                            <hr>
-                                            <label for="log" class="form-label">¿Aún no tienes una cuenta?, <a href="#" data-bs-target="#modal-registro" data-bs-toggle="modal">Regístrate!</a></label>
-                                        </form>
-                                    </div>
-                                    
                                 </div>
                             </div>
-                        </div>
+                        </form>
 
 
                         <!--modal registro-->
-                        <div class="modal fade" id="modal-registro" aria-labelledby="modalTitle">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header modal-registro">
-                                        <h2 class="modal-title fs-5 mx-auto">¿Aún no tienes una cuenta? <br> Regístrate ahora mismo!</h2>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="/reg">
-                                            <div class="col">
-                                                <div class="row mx-auto">
-                                                    <div class="col">
-                                                        <label for="nombre" class="col-form-label">Nombre:</label>
-                                                        <input type="text" class="form-control" id="nombre">
+                        <form action="{{ route('users.store') }}" method="POST">
+                            @csrf
+                            <div class="modal fade" id="modal-registro" aria-labelledby="modalTitle">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header modal-registro">
+                                            <h2 class="modal-title fs-5 mx-auto">¿Aún no tienes una cuenta? <br> Regístrate ahora mismo!</h2>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/reg" method="POST">
+                                                {{ csrf_field() }}
+                                                <div class="col">
+                                                    <div class="row mx-auto">
+                                                        <div class="col">
+                                                            <label for="nombre" class="col-form-label">Nombre:</label>
+                                                            <input type="text" class="form-control" id="nombre" name="nombre">
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="appat" class="col-form-label">Apellido paterno:</label>
+                                                            <input type="text" class="form-control" id="appat" name="appat">
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="apmat" class="col-form-label">Apellido materno:</label>
+                                                            <input type="text" class="form-control" id="apmat" name="apmat">
+                                                        </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <label for="appat" class="col-form-label">Apellido paterno:</label>
-                                                        <input type="text" class="form-control" id="appat">
+                                                    <div class="row mx-auto">
+                                                        <div class="col">
+                                                            <label for="coelec" class="col-form-label">Correo electrónico:</label>
+                                                            <input type="email" class="form-control" placeholder="example@example.com" id="coelec" name="coelec">
+                                                        </div>
                                                     </div>
-                                                    <div class="col">
-                                                        <label for="apmat" class="col-form-label">Apellido materno:</label>
-                                                        <input type="text" class="form-control" id="apmat">
+                                                    <div class="row mx-auto">
+                                                        <div class="col">
+                                                            <label for="pass" class="col-form-label">Contraseña:</label>
+                                                            <input type="password" class="form-control" id="pass" name="pass">
+                                                        </div>
+                                                        <div class="col">
+                                                            <label for="passval" class="col-form-label">Verifique la contraseña:</label>
+                                                            <input type="password" class="form-control" id="passval" name="passval">
+                                                        </div>
                                                     </div>
+                                                    <div class="col-sm-6 mx-auto" style="padding-top: 15px">
+                                                        <button class="btn btn-primary btn-diag" type="submit">Registrarse</button>
+                                                    </div>
+                                                    <hr>
+                                                    <label for="reg" class="form-label">¿Ya estás registrado?, <a href="#" data-bs-target="#modal-inicio" data-bs-toggle="modal">inicia sesión</a> ahora mismo!</label>
                                                 </div>
-                                                <div class="row mx-auto">
-                                                    <div class="col">
-                                                        <label for="coelec" class="col-form-label">Correo electrónico:</label>
-                                                        <input type="email" class="form-control" placeholder="example@example.com">
-                                                    </div>
-                                                </div>
-                                                <div class="row mx-auto">
-                                                    <div class="col">
-                                                        <label for="pass" class="col-form-label">Contraseña:</label>
-                                                        <input type="password" class="form-control" id="pass">
-                                                    </div>
-                                                    <div class="col">
-                                                        <label for="passval" class="col-form-label">Verifique la contraseña:</label>
-                                                        <input type="password" class="form-control" id="passval">
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-6 mx-auto" style="padding-top: 15px">
-                                                    <button class="btn btn-primary btn-diag" type="submit">Registrarse</button>
-                                                </div>
-                                                <hr>
-                                                <label for="reg" class="form-label">¿Ya estás registrado?, <a href="#" data-bs-target="#modal-inicio" data-bs-toggle="modal">inicia sesión</a> ahora mismo!</label>
-                                            </div>
-                                        </form>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </form>
                        
 
                     </div>

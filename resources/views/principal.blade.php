@@ -16,7 +16,7 @@
                 <div class="row align-items-center">
                     <!--logo g6-->
                     <div class="col-1">
-                        <a href="#/"><img src="{{asset('img/G6.png')}}" alt="Logo G6"></a>
+                        <a href="#"><img src="{{asset('img/G6.png')}}" alt="Logo G6"></a>
                     </div>
                     <div class="col">
                         <div class="container justify-content-end">
@@ -103,7 +103,7 @@
                         </div>
 
                         <!--modal p2-->
-                        <div class="modal fade" id="modal-diagnostico-2" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-2" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -140,7 +140,7 @@
                         </div>
 
                         <!--modal p3-->
-                        <div class="modal fade" id="modal-diagnostico-3" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-3" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -205,7 +205,7 @@
                         </div>
 
                         <!--modal p4-->
-                        <div class="modal fade" id="modal-diagnostico-4" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-4" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -269,7 +269,7 @@
                         </div>
 
                         <!--modal p5-->
-                        <div class="modal fade" id="modal-diagnostico-5" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-5" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -322,7 +322,7 @@
                         </div>
 
                         <!--modal p6-->
-                        <div class="modal fade" id="modal-diagnostico-6" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-6" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -375,7 +375,7 @@
                         </div>
 
                         <!--modal p7-->
-                        <div class="modal fade" id="modal-diagnostico-7" aria-labelledby="modalTitle" data-bs-backdrop="static">
+                        <div class="modal fade" id="modal-diagnostico-7" data-bs-backdrop="static" aria-labelledby="modalTitle">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header modal-registro">
@@ -434,7 +434,7 @@
                                         
                                             <div>
                                                 <button class="btn btn-reg btn-dark"data-bs-target="#modal-diagnostico-6" data-bs-toggle="modal">atras</button>
-                                                <button type="button" class="btn btn-diag btn-success" onclick="enviar();" data-bs-dismiss="modal">Enviar</button>
+                                                <button type="button" class="btn btn-diag btn-success" data-bs-dismiss="modal" onclick="enviar();">Enviar</button>
                                             </div>
                                         </div>
                                     </div>

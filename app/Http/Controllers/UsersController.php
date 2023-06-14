@@ -1,18 +1,21 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Route;
 
-use App\Models\User;
+use App\Models\Users;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        Route::get('/', function () {
+            return view('index');
+        });
     }
 
     /**
@@ -28,13 +31,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(User $user)
+    public function show(Users $users)
     {
         //
     }
@@ -42,7 +45,7 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(Users $users)
     {
         //
     }
@@ -50,7 +53,7 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Users $users)
     {
         //
     }
@@ -58,7 +61,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(Users $users)
     {
         //
     }
