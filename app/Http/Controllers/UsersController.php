@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Models\Users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -26,12 +27,39 @@ class UsersController extends Controller
         //
     }
 
+    public function login(Request $request){
+        $request->validate([
+            'coelec' => 'required|email|regex:/^.+@.+\..+$/',
+            'pass' => 'required|min:8',
+        ]);
+    
+        $credentials = $request->only('coelec', 'pass');
+    
+        if (Auth::attempt($credentials)) {
+            // Las credenciales son válidas y el usuario ha iniciado sesión exitosamente
+            return view('principal');
+        }
+    
+        return redirect()->back()->withErrors([
+            'coelec' => 'Las credenciales no son válidas',
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        $request->validate([]);
+        $request->validate([
+            'nombre' => 'required|min:3',
+            'appat' => 'required|min:3',
+            'apmat',
+            'coelec' => 'required|email|regex:/^.+@.+\..+$/',
+            'pass' => 'required|min:8',
+            'passval' => 'required|same:pass'
+        ]);
+        $Users = Users::create($request->only('nombre', 'appat', 'apmat', 'coelec', 'pass'));
+        return view('principal');
     }
 
     /**

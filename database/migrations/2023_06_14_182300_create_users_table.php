@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre', 75);
             $table->string('appat', 75);
             $table->string('apmat', 75)->default('');
-            $table->string('correo', 75);
+            $table->string('coelec', 75);
             $table->string('pass', 75);
             $table->timestamps();
         });

@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,8 +29,8 @@ Route::get('/reg', function(){
     return view('principal');
 });
 
-Route::get('/login', function(){
+/*Route::get('/login', function(){
     return view('/sisweb/login');
-});
+});*/
 
 Route::resource('users', UsersController::class);

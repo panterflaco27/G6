@@ -70,7 +70,7 @@
 
                         
                          <!--modal inicio de sesion-->
-                        <form action="" method="">
+                        <form action="/log" method="">
                              <div class="modal fade" id="modal-inicio" aria-labelledby="modalTitle">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -79,16 +79,17 @@
                                             <!--button type="button" class="btn-close" data-bs-dismiss="modal " aria-label="Close"></button-->
                                         </div>
                                         <div class="modal-body">
-                                            <form action="/log">
+                                            <form action="/log" method="POST">
+                                                @csrf
                                                 <div>
-                                                    <label for="correo" class="col-form-label">Correo:</label>
-                                                    <input type="email" class="form-control" id="correo" placeholder="example@example.com">
-                                                    <label for="password" class="col-form-label">Contraseña:</label>
-                                                    <input type="password" class="form-control" id="password">
+                                                    <label for="coelec" class="col-form-label">Correo:</label>
+                                                    <input type="email" class="form-control" id="coelec" name="coelec" placeholder="example@example.com">
+                                                    <label for="pass" class="col-form-label">Contraseña:</label>
+                                                    <input type="password" class="form-control" id="pass" name="pass">
                                                 </div>
                                                 <div class="flex-col">
-                                                    <input type="checkbox" class="" id="pass">
-                                                    <label for="pass" class="form-label">Recordar contraseña</label>
+                                                    <input type="checkbox" class="" id="remember" name="remenber">
+                                                    <label for="remember" class="form-label">Recordar contraseña</label>
                                                     <a href="#" class="">¿Olvidó su contraseña?</a>
                                                 </div>
                                                 <button class="btn btn-primary btn-diag" type="submit">Iniciar sesión</button>
@@ -120,10 +121,16 @@
                                                         <div class="col">
                                                             <label for="nombre" class="col-form-label">Nombre:</label>
                                                             <input type="text" class="form-control" id="nombre" name="nombre">
+                                                            @error('nombre')
+                                                                <p class="form-text text-danger">{{ $message }}</p>
+                                                            @enderror
                                                         </div>
                                                         <div class="col">
                                                             <label for="appat" class="col-form-label">Apellido paterno:</label>
                                                             <input type="text" class="form-control" id="appat" name="appat">
+                                                            @error('appat')
+                                                                <p class="form-text text-danger">{{ $message }}</p>
+                                                            @enderror
                                                         </div>
                                                         <div class="col">
                                                             <label for="apmat" class="col-form-label">Apellido materno:</label>
@@ -134,16 +141,25 @@
                                                         <div class="col">
                                                             <label for="coelec" class="col-form-label">Correo electrónico:</label>
                                                             <input type="email" class="form-control" placeholder="example@example.com" id="coelec" name="coelec">
+                                                            @error('coelec')
+                                                                <p class="form-text text-danger">{{ $message }}</p>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="row mx-auto">
                                                         <div class="col">
                                                             <label for="pass" class="col-form-label">Contraseña:</label>
                                                             <input type="password" class="form-control" id="pass" name="pass">
+                                                            @error('pass')
+                                                                <p class="form-text text-danger">{{ $message }}</p>
+                                                            @enderror
                                                         </div>
                                                         <div class="col">
                                                             <label for="passval" class="col-form-label">Verifique la contraseña:</label>
                                                             <input type="password" class="form-control" id="passval" name="passval">
+                                                            @error('passval')
+                                                                <p class="form-text text-danger">{{ $message }}</p>
+                                                            @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-6 mx-auto" style="padding-top: 15px">
